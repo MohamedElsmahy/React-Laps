@@ -10,10 +10,6 @@ export const App = () => {
     setJobs([]);
   };
 
-  // const handleDeleteBtn = () => {
-  //   setJobs.splice(index, 1);
-  // }
-
   const addjob = (newJob) => {
     setJobs([...jobs, newJob]);
   };
@@ -28,7 +24,7 @@ export const App = () => {
           <ViewJobs
             jobs={jobs}
             onDelete={handleDelete}
-            // onDeleteBtn={handleDeleteBtn}
+            
           />
         </div>
       </div>
