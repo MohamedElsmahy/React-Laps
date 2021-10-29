@@ -21,13 +21,9 @@ export const Login = () => {
   };
 
   
-  if (localStorage.key === "12345"){
-    Redirect("/posts");
-    console.log(email);
-    console.log(password);
-  } 
+  const loggedIN = localStorage.getItem("token")
 
-  return (
+  return ! loggedIN ? (
     <div className="d-flex justify-content-center">
       <form className="card p-3 col-6" onSubmit={handleSubmit}>
         <Input
@@ -48,6 +44,10 @@ export const Login = () => {
         <button className="btn btn-primary">Log-in</button>
       </form>
     </div>
+  ) : (
+    <Route path="/login">
+      <Redirect to="/posts" />
+    </Route>
   );
 };
 // export const ContactUs = (props) => {
